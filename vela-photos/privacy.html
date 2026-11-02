@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vela 相册 · 隐私政策</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    color: #1c1c1e; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e5e5ea; background: #1c1c1e; }
+    h1, h2 { border-color: #3a3a3c; }
+    .meta { color: #98989f; }
+    code { background: #2c2c2e; }
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.0625rem; margin: 2.25rem 0 .625rem; padding-bottom: .375rem; border-bottom: 1px solid #e5e5ea; }
+  .meta { color: #6e6e73; font-size: .875rem; margin: 0 0 2rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .375rem 0; }
+  code { background: #f2f2f7; padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+  .note { border-left: 3px solid #ED5A16; padding: .25rem 0 .25rem .875rem; margin: 1rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Vela 相册 · 隐私政策</h1>
+  <p class="meta">最后更新：2026 年 11 月 2 日 · 适用于 iOS 版 Vela 相册</p>
+
+  <p>Vela 相册是一款<strong>纯本地</strong>的照片整理工具。我们不需要账号，不联网，也不收集你的任何数据。
+  这份政策说明 App 具体会碰哪些数据、为什么碰、以及它们去了哪里。</p>
+
+  <h2>一、我们不收集任何数据</h2>
+  <ul>
+    <li>没有账号体系，不需要手机号、邮箱或任何身份信息。</li>
+    <li>没有埋点、没有统计 SDK、没有第三方广告或分析组件。</li>
+    <li>App 内没有任何发起网络请求的代码，你的数据不会离开这台设备。</li>
+  </ul>
+  <p>对应 App Store 的「App 隐私」问卷，本 App 的填写结果是<strong>「不收集数据」</strong>。</p>
+
+  <h2>二、照片访问</h2>
+  <ul>
+    <li>App 通过 iOS 官方 Photos 框架读取你的照片，用于展示、分组和预览。
+      你可以在「设置 → 隐私与安全性 → 照片」里随时改为「仅选中的照片」或关闭。</li>
+    <li><strong>原图始终保存在系统相册里</strong>，App 不会复制、移动或上传你的原始照片。</li>
+    <li>App 自己保存的只有「整理信息」：照片名称、标签、所属相册，以及相册的图标和封面设置。
+      这些内容存在 App 的沙盒目录内（<code>Library/Application Support/Vela/library.json</code>）。</li>
+    <li>删除照片调用的是系统相册的删除接口，<strong>每次都必须由你在系统弹窗里确认</strong>，
+      App 无法静默删除任何照片。</li>
+    <li>若你开启了 iCloud 照片且原图未下载到本机，App 会通过系统能力触发下载，
+      这一步由 iOS 完成，App 不接触你的 iCloud 凭据。</li>
+  </ul>
+
+  <h2>三、加密相册</h2>
+  <ul>
+    <li>密码不会以明文保存。App 用 PBKDF2-HMAC-SHA256（20 万次迭代）从密码派生出密钥，
+      再用它包裹每个相册独立的随机密钥（AES-256-GCM）。磁盘上只留盐值、迭代次数和密文。</li>
+    <li>加密相册的名称、封面和照片清单在磁盘上是密文。</li>
+    <li>如果你启用了面容 ID 解锁，相册密钥会另外存一份在系统钥匙串中，
+      由 <code>biometryCurrentSet</code> 保护，只有通过生物识别才能取出。</li>
+    <li>密码和密钥<strong>都不上传、不同步</strong>。忘记密码无法找回——这是加密的代价，不是缺陷。</li>
+    <li>需要说明的边界：加密保护的是 App 内的访问与落盘数据。照片原图仍在系统相册中，
+      iOS 不允许第三方 App 隐藏或删除用户的原图，因此系统「照片」App 里依然可以看到它们。</li>
+  </ul>
+
+  <h2>四、诊断与日志</h2>
+  <p>App 不采集崩溃日志或使用数据，也不向任何服务器发送信息。若你在系统设置里开启了
+  「与 App 开发者共享分析」，相关数据由 Apple 按其隐私政策处理，与 App 自身无关。</p>
+
+  <h2>五、儿童</h2>
+  <p>App 不面向 13 岁以下儿童单独收集任何信息（事实上它不收集任何人的信息）。</p>
+
+  <h2>六、你的控制权</h2>
+  <ul>
+    <li>随时可以在系统设置里撤销照片权限。</li>
+    <li>卸载 App 会一并删除它保存的整理信息（照片本身不受影响）。</li>
+    <li>App 内「设置 → 重新扫描相册」可以重建索引。</li>
+  </ul>
+
+  <h2>七、政策变更</h2>
+  <p>如果这份政策有实质变化，我们会更新本页顶部的日期，并在 App 内说明。
+  由于 App 不收集数据，我们预计不会有需要通知你的重大变更。</p>
+
+  <h2>八、联系我们</h2>
+  <p>任何与隐私相关的问题，欢迎发邮件到 <a href="mailto:qileijohn@gmail.com">qileijohn@gmail.com</a>，
+  或通过 <a href="./support.html">支持页面</a> 反馈。</p>
+
+  <div class="note">一句话总结：你的照片和整理数据都留在这台 iPhone 上，我们看不到，也拿不到。</div>
+</div>
+</body>
+</html>
