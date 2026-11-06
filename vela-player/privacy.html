@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VelaPlayer · 隐私政策</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0; padding: 2rem 1.25rem 4rem;
+    font: 16px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+    color: #1c1c1e; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { color: #e5e5ea; background: #1c1c1e; }
+    h1, h2 { border-color: #3a3a3c; }
+    .meta { color: #98989f; }
+    code { background: #2c2c2e; }
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.0625rem; margin: 2.25rem 0 .625rem; padding-bottom: .375rem; border-bottom: 1px solid #e5e5ea; }
+  .meta { color: #6e6e73; font-size: .875rem; margin: 0 0 2rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin: .375rem 0; }
+  code { background: #f2f2f7; padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+  .note { border-left: 3px solid #7B2CFF; padding: .25rem 0 .25rem .875rem; margin: 1rem 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>VelaPlayer · 隐私政策</h1>
+  <p class="meta">最后更新：2026 年 11 月 7 日 · 适用于 iOS 版 VelaPlayer</p>
+
+  <p>VelaPlayer 是一款<strong>本地优先</strong>的视频播放器。我们不需要账号，不向任何服务器上传你的文件，也不收集你的个人数据。
+  这份政策说明 App 会接触哪些数据、为什么接触、以及它们去了哪里。</p>
+
+  <h2>一、我们不收集任何数据</h2>
+  <ul>
+    <li>没有账号体系，不需要手机号、邮箱或任何身份信息。</li>
+    <li>没有埋点、没有统计 SDK、没有第三方广告或分析组件。</li>
+    <li>App 不内置任何片源，也不向内容服务器发起请求；播放的是你自己导入的文件。</li>
+  </ul>
+  <p>对应 App Store 的「App 隐私」问卷，本 App 的填写结果是<strong>「不收集数据」</strong>。</p>
+
+  <h2>二、你的文件存在哪里</h2>
+  <ul>
+    <li>导入的视频与字幕保存在 App 沙盒的 <code>Documents/VelaLibrary</code> 及其子目录中；
+        由于开启了文件共享，你也可以通过系统「文件」App 或电脑访达查看这些文件。</li>
+    <li>移入私密文件夹的文件保存在 <code>Library/Application Support/VelaVault</code>，
+        该目录不会出现在「文件」App 的普通目录列表中。</li>
+    <li>播放时不产生长期副本；外挂字幕只在本机读取与解析。</li>
+    <li>卸载 App 会一并删除它保存的全部文件，请先自行备份。</li>
+  </ul>
+
+  <h2>三、Wi-Fi 离线传输与本地网络</h2>
+  <ul>
+    <li>开启「Wi-Fi 离线传输」后，App 会在本机启动一个 HTTP 服务并申请 iOS 的「本地网络」权限，
+        用于让同一局域网内的电脑浏览器发现并上传文件。</li>
+    <li>传输的数据只在<strong>你的 iPhone 与你的电脑之间</strong>流动，不经过我们的服务器或任何第三方服务。</li>
+    <li>服务仅在 App 前台运行时可用；关闭服务或退出 App 后不再监听。你可以在系统设置里随时撤销本地网络权限。</li>
+    <li>上传过程中会生成 <code>.partial</code> 临时文件用于断点续传，传输完成后自动清理。</li>
+  </ul>
+
+  <h2>四、私密文件夹与 Face ID</h2>
+  <ul>
+    <li>「私密文件夹」是 App 内的访问门禁：打开该目录时通过系统 LocalAuthentication 验证 Face ID / 设备密码。
+        App 不接触、也不保存你的生物特征数据。</li>
+    <li><strong>请留意：文件本身不额外加密。</strong>移入私密目录只是把原文件原子移动到 App 私有目录，磁盘上仍是原始明文。
+        这道门禁用于防止他人拿起手机随手打开 App 看到内容，不等同于磁盘级加密保护。</li>
+    <li>离开 App 会自动重新上锁；你可以随时把文件移出私密目录。</li>
+  </ul>
+
+  <h2>五、内置解码引擎</h2>
+  <p>App 内置 MobileVLCKit 用于本地解码 MKV、AVI 等格式。该组件仅在本机解码你导入的文件，不联网、不上传任何数据。</p>
+
+  <h2>六、诊断与日志</h2>
+  <p>Release 版本不采集崩溃日志或使用数据，也不向任何服务器发送信息。若你在系统设置里开启了
+  「与 App 开发者共享分析」，相关数据由 Apple 按其隐私政策处理，与 App 自身无关。</p>
+
+  <h2>七、儿童</h2>
+  <p>App 不面向 13 岁以下儿童单独收集任何信息（事实上它不收集任何人的信息）。</p>
+
+  <h2>八、政策变更</h2>
+  <p>如果这份政策有实质变化，我们会更新本页顶部的日期，并在 App 内说明。</p>
+
+  <h2>九、联系我们</h2>
+  <p>任何与隐私相关的问题，欢迎发邮件到 <a href="mailto:qileijohn@gmail.com">qileijohn@gmail.com</a>，
+  或通过 <a href="./support.html">支持页面</a> 反馈。</p>
+
+  <div class="note">一句话总结：你的视频只留在这台 iPhone 和你自己的电脑上，我们看不到，也拿不到。</div>
+</div>
+</body>
+</html>
