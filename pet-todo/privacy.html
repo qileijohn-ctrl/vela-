@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宠物待办 · 隐私政策</title>
+<style>
+  :root{--blue:#1e6fff;--cyan:#00b8d4;--ink:#0d1b2a;--sub:#5a6b7c;--line:#dce8f5;--bg:#f4f9ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.85 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+  .wrap{max-width:820px;margin:0 auto;padding:48px 22px 80px}
+  header{border-bottom:2px solid var(--line);padding-bottom:22px;margin-bottom:28px}
+  .kicker{font-size:12px;letter-spacing:2px;color:var(--blue);font-weight:700}
+  h1{font-size:30px;margin:8px 0 6px;letter-spacing:.5px}
+  .meta{font-size:12px;color:var(--sub)}
+  h2{font-size:18px;margin:30px 0 10px;padding-left:12px;border-left:4px solid var(--blue)}
+  p{margin:8px 0;color:var(--sub)}
+  strong{color:var(--ink)}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:12px 0;box-shadow:0 4px 18px rgba(30,111,255,.05)}
+  .hero{background:linear-gradient(120deg,#e8f2ff,#e6fbff);border:1px solid #cfe4ff}
+  ul{margin:8px 0;padding-left:20px;color:var(--sub)}
+  li{margin:5px 0}
+  table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px;background:#fff;border-radius:12px;overflow:hidden}
+  th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  th{background:#eaf3ff;color:var(--ink);font-weight:700}
+  td{color:var(--sub)}
+  .tag{display:inline-block;background:#e6f6ff;color:#0369a1;border:1px solid #b9e3ff;border-radius:20px;padding:1px 10px;font-size:12px;font-weight:700}
+  footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">PRIVACY POLICY</div>
+  <h1>宠物待办 · 隐私政策</h1>
+  <div class="meta">生效日期：2026 年 11 月 8 日　·　适用版本：iOS 版 3.4.5 及以上</div>
+</header>
+
+<div class="card hero">
+  <strong>一句话说明：</strong>「宠物待办」是一台完全本机运行的应用。我们<strong>不收集、不上传、不共享</strong>你的任何个人数据，应用内没有账号、没有服务器、没有广告、没有第三方统计或追踪 SDK。
+</div>
+
+<h2>1. 我们处理哪些数据</h2>
+<table>
+  <tr><th>数据</th><th>存放位置</th><th>用途</th><th>是否离开设备</th></tr>
+  <tr><td>待办事项与时间</td><td>本机网页存储 / 系统钥匙串</td><td>展示清单、排定本地提醒、同步主屏小组件</td><td><span class="tag">否</span></td></tr>
+  <tr><td>宠物养成状态、主题、已解锁项</td><td>本机网页存储</td><td>恢复上次使用状态</td><td><span class="tag">否</span></td></tr>
+  <tr><td>语音输入时的短时音频</td><td>仅内存，交给系统语音识别框架</td><td>把你说的话转成待办文字</td><td>见第 3 节</td></tr>
+  <tr><td>购买记录</td><td>本机 + Apple 的 App Store 交易系统</td><td>确认一次性买断权益、支持恢复已购项目</td><td>由 Apple 处理，我们看不到支付信息</td></tr>
+</table>
+<p>以上数据均保存在你的设备本机。<strong>卸载应用会一并清除</strong>本机的待办与养成数据；通过 App Store 购买的权益可在重新安装后点「恢复已购项目」找回。</p>
+
+<h2>2. 我们不会做什么</h2>
+<ul>
+  <li>不要求注册、登录，也不收集姓名、邮箱、电话、通讯录、照片、位置、设备标识符。</li>
+  <li>不接入广告、分析、崩溃统计或任何第三方 SDK，不进行跨应用 / 跨网站追踪。</li>
+  <li>不发送远程推送，不向任何服务器发起网络请求。到点提醒是 iOS 本地通知，只在本机排程。</li>
+  <li>不读取系统通用剪贴板内容。</li>
+</ul>
+
+<h2>3. 麦克风与语音识别</h2>
+<div class="card">
+  <p>只有在你<strong>长按话筒按钮</strong>时才会启用麦克风，松手即停止，录音不会保存为文件，也不会由本应用上传。</p>
+  <p>识别由 iOS 系统的语音识别框架完成，并<strong>优先使用设备端识别</strong>。若当前设备或语言不支持端侧识别，系统可能回退使用 Apple 提供的在线语音识别服务；此时音频由 Apple 按系统服务处理，本应用不参与传输、不保留副本、不把识别结果用于其他用途。</p>
+  <p>你可以在「设置 → 隐私与安全性 → 麦克风 / 语音识别」随时关闭授权；关闭后仍可用键盘输入待办。</p>
+</div>
+
+<h2>4. 通知与桌面小组件</h2>
+<p>到点提醒由系统本地通知发出，横幅只显示待办详情，不含跳转、不含角标。主屏小组件通过系统提供的共享容器读取「最近 3 条待办」与宠物状态，数据同样只在本机，不会出现在其他设备或云端。</p>
+
+<h2>5. 应用内购买</h2>
+<p>「自动托管」「宠物复活」「更换宠物」为一次性买断的非消耗型内购，付款与退款均由 Apple 通过 App Store 处理。我们只接收交易是否有效的校验结果，<strong>不接触你的 Apple ID、姓名或支付信息</strong>。</p>
+
+<h2>6. 儿童</h2>
+<p>本应用为 4+ 分级，不含面向儿童的定向广告、外部链接、用户生成内容或社交功能，也不会主动收集儿童数据。</p>
+
+<h2>7. 政策变更与联系</h2>
+<p>如政策发生实质变更，会在应用新版本中同步更新本页。</p>
+<div class="card">
+  <p>开发者：wei qi　·　应用名称：宠物待办　·　Bundle ID：com.qiwei.pocketplanet</p>
+  <p>联系邮箱：<strong><a href="mailto:qileijohn@gmail.com">qileijohn@gmail.com</a></strong></p>
+</div>
+
+<footer>本页为 App Store Connect 登记的隐私政策页面。宠物待办 · 隐私政策　|　<a href="./support.html">支持页</a>　|　© 2026 wei qi</footer>
+</div>
+</body>
+</html>
